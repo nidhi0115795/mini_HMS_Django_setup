@@ -1,0 +1,22 @@
+<h2>Patient Signup</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Username</label><br>
+    <input type="text" name="username" required><br><br>
+
+    <label>Password</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <button type="submit">Signup</button>
+</form>
+
+{% for message in messages %}
+<p style="color:red;">{{ message }}</p>
+{% endfor %}
+
+<p>
+    Already have an account?
+    <a href="{% url 'login' %}">Login</a>
+</p>
